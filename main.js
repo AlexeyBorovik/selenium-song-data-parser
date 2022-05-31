@@ -1,8 +1,10 @@
 const { Builder, Browser, By } = require("selenium-webdriver");
+const fs = require("fs");
 
 (async function parse() {
   let driver = new Builder().forBrowser(Browser.FIREFOX).build();
   driver.get("https://centerfm.by/ru/history/");
+  driver.manage().window().maximize();
   try {
     let trackList = [];
     let timeArray = [];
@@ -33,7 +35,7 @@ const { Builder, Browser, By } = require("selenium-webdriver");
       await timeInput.sendKeys(`${time}`);
       await searchButton.click();
 
-      await PromiseDelay(30000);
+      await PromiseDelay(15000);
 
       let contentDivs = await driver.findElements(
         By.css(".b-track-item__content-inner")
@@ -53,6 +55,13 @@ const { Builder, Browser, By } = require("selenium-webdriver");
       }
     }
     console.log(trackList);
+    fs.writeFile("songs.json", JSON.stringify(trackList), function (err) {
+        if (err) {
+            console.log("An error occured while writing JSON Object to File.");
+            return console.log(err);
+        }
+        console.log("JSON file has been saved.");
+    })
     setTimeout(() => driver.quit(), 10000);
   } catch (error) {
     console.log(error);
