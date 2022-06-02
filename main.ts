@@ -11,8 +11,8 @@ const fs = require("fs");
 
     for (let h = 0; h < 24; h++) {
       for (let m = 0; m <= 59; m += 7) {
-        mh = h <= 9 ? `0${h}` : h;
-        mMin = m <= 9 ? `0${m}` : m;
+       const mh = h <= 9 ? `0${h}` : h;
+       const mMin = m <= 9 ? `0${m}` : m;
         timeArray.push(`${mh}:${mMin}`);
       }
     }
@@ -33,7 +33,7 @@ const fs = require("fs");
       }
     let oldFirstTime = await getFistTime();
 
-    for (time of timeArray) {
+    for (const time of timeArray) {
         console.log('timeCycleChecker');
       let timeInput = await driver.findElement(
         By.name("play_history_search[time]")
@@ -75,7 +75,7 @@ const fs = require("fs");
       }
     }
 
-     fs.writeFile("songs3.json", JSON.stringify(trackList), function (err) {
+     fs.writeFile("songs3.json", JSON.stringify(trackList), function (err: any) {
         if (err) {
             console.log("An error occured while writing JSON Object to File.");
             return console.log(err);
@@ -85,7 +85,7 @@ const fs = require("fs");
 
     setTimeout(() => driver.quit(), 10000);
   } catch (error) {
-    fs.writeFile("PartOfsongs3.json", JSON.stringify(trackList), function (err) {
+    fs.writeFile("PartOfsongs3.json", JSON.stringify(trackList), function (err: any) {
         if (err) {
             console.log("An error occured while writing JSON Object to File.");
             return console.log(err);
@@ -97,6 +97,6 @@ const fs = require("fs");
   }
 })();
 
-function PromiseDelay(delayInMs) {
+function PromiseDelay(delayInMs: number) {
   return new Promise((resolve) => setTimeout(resolve, delayInMs));
 };

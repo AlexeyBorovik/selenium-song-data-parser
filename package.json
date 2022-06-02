@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "get-stats": "ts-node ./songs/joinArray.ts"
+    "get-stats": "ts-node ./songs/joinArray.ts",
+    "parse": "ts-node ./main.ts"
   },
   "dependencies": {
     "selenium-webdriver": "^4.1.2"
