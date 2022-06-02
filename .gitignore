@@ -1,7 +1,2 @@
-/node_modules
-/package-lock.json
-/package.json
-/parse.js
-/setTime.js
-/test.js
-/timeArray.js
+.DS_Store
+node_modules/
