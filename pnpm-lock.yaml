@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^17.0.38
+  '@types/selenium-webdriver': ^4.1.1
   selenium-webdriver: ^4.1.2
   ts-node: ^10.8.0
   typescript: ^4.7.2
@@ -11,6 +12,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 17.0.38
+  '@types/selenium-webdriver': 4.1.1
   ts-node: 10.8.0_h77muqpegcwcauif74p6js2ti4
   typescript: 4.7.2
 
@@ -57,6 +59,18 @@ packages:
 
   /@types/node/17.0.38:
     resolution: {integrity: sha512-5jY9RhV7c0Z4Jy09G+NIDTsCZ5G0L5n+Z+p+Y7t5VJHM30bgwzSjVtlcBxqAj+6L/swIlvtOSzr8rBk/aNyV2g==}
+    dev: true
+
+  /@types/selenium-webdriver/4.1.1:
+    resolution: {integrity: sha512-NxxZZek50ylIACiXebKQYHD3D4One3WXOasEXWazL6aTfYbZob7ClNKxUpg8I4/oWArX87oPWvj1cHKqfel3Hg==}
+    dependencies:
+      '@types/ws': 8.5.3
+    dev: true
+
+  /@types/ws/8.5.3:
+    resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
+    dependencies:
+      '@types/node': 17.0.38
     dev: true
 
   /acorn-walk/8.2.0:
